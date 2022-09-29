@@ -1,39 +1,63 @@
-{% extends "base.html" %} {% block content %} {% for event in events %}
-<div>
+{% extends "base.html" %}
+{% block content %}
+<div class="main_container">
+<h2>Upcoming events</h2>
+<section class="events_container">
+    
+{% for event in events %}
+<div class="event">
+    <p class="event_header">{{ event.description }}</p>
   <p>Date: {{ event.date }}</p>
   <p>Event: {{ event.name }}</p>
   <p>No. of guests: {{ event.guest_num }}</p>
   <p>Where: {{ event.room }}</p>
-  <p>Event type: {{ event.description }}</p>
-  <hr />
+  
+  {% if event.recurring %}
+    <p>This event is recurring <i class="fa-solid fa-repeat"></i></p>
+    {% else %}
+    <!-- <span>&#10060;</span> -->
+    {% endif %}
+</p>
 </div>
 {% endfor %}
+</section>
+<h2>Add new events</h2>
+<div class="form_container">
 
-<form action="" method="post">
-  <div>
-    <label for="date">Enter date:</label>
-    <input id="date" type="text" name="date" />
+  <form action="" method="post">
+  
+  <div class="form_group">
+    <div>
+        <label for="name">Event Name:</label>
+        <input id="name" type="text" name="name" />
+    </div>
+    
+    <div>
+      <label for="date">Enter date:</label>
+      <input id="date" type="text" name="date" />
+    </div>
+  </div>
+  
+  <div class="form_group">
+    <div>
+      <label for="guest_num">Party size:</label>
+      <input id="guest_num" type="number" name="guest_num" />
+    </div>
+
+    <div>
+      <label for="location">Event Room:</label>
+      <input id="location" type="text" name="location" />
+    </div>
   </div>
 
-  <div>
-    <label for="name">Event</label>
-    <input id="name" type="text" name="name" />
-  </div>
-
-  <div>
-    <label for="guest_num">Number of guests:</label>
-    <input id="guest_num" type="number" name="guest_num" />
-  </div>
-
-  <div>
-    <label for="location">Where:</label>
-    <input id="location" type="text" name="location" />
-  </div>
-
-  <div>
+  <div class="form_textarea">
     <label for="description">Event type:</label>
     <textarea name="description" id="description" cols="30" rows="5"></textarea>
   </div>
-  <input type="submit" value="Submit" />
+  <input class="submit_btn" type="submit" value="Add Event" />
 </form>
+</div> <!----- form container ----->
+</div> <!----- main container ----->
 {% endblock %}
+
+

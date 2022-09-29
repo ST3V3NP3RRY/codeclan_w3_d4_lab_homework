@@ -1,0 +1,99 @@
+html {
+  font-size: 0.625rem;
+}
+body {
+  background-color: #eee;
+  background-image: url(/static/images/floral_background.jpeg);
+
+  font-size: 1.8rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display', serif;";
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+h1 {
+  font-size: 8rem;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 4rem;
+}
+
+input,
+label {
+  display: block;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.events_container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event {
+  background-color: #fff;
+  width: 30rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.event > p {
+  width: 100%;
+  border-bottom: 1px solid lightgreen;
+  padding-bottom: 1rem;
+}
+
+.event > p:last-of-type {
+  border: none;
+}
+
+/* Form styling */
+.form_container {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 60rem;
+  min-width: 40rem;
+}
+
+.form_group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form_group > div,
+input,
+textarea {
+  width: 100%;
+}
+
+.submit_btn {
+  background-color: rgb(141, 169, 126);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+form {
+  margin-bottom: 0;
+}
